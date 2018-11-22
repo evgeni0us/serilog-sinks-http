@@ -14,10 +14,10 @@
 
 namespace Serilog.Sinks.Http.Private.Network
 {
-    public enum DateFormats
+    public interface IBufferFiles
     {
-        Date,
-        Hour,
-        HalfHour
+        string BookmarkFileName { get; }
+
+        string[] Get();
     }
 }

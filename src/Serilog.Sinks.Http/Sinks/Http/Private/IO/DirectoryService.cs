@@ -12,12 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Serilog.Sinks.Http.Private.Network
+using System.IO;
+
+namespace Serilog.Sinks.Http.Private.IO
 {
-    public enum DateFormats
+    public class DirectoryService : IDirectoryService
     {
-        Date,
-        Hour,
-        HalfHour
+        public string[] GetFiles(string path, string searchPattern) =>
+            Directory.GetFiles(path, searchPattern);
     }
 }
+
